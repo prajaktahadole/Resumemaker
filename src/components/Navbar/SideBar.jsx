@@ -17,6 +17,7 @@ import {GroupAddRounded} from "@mui/icons-material";
 import SchoolIcon from '@mui/icons-material/School';
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import ScreenSearchDesktopIcon from '@mui/icons-material/ScreenSearchDesktop';
+import { Link } from "react-router-dom";
 //import InitialsAvatar from 'react-initials-avatar';
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
@@ -32,6 +33,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
             icon={icon}
         >
             <Typography>{title}</Typography>
+            <Link to={to} />
         </MenuItem>
     );
 };
@@ -41,7 +43,7 @@ const Sidebar = () => {
     const colors = tokens(theme.palette.mode);
     const [isCollapsed, setIsCollapsed] = useState(false);
     const [selected, setSelected] = useState("Dashboard");
-    const navigate = useNavigate();
+   
     return (
         <Box
             sx={{
@@ -126,7 +128,7 @@ const Sidebar = () => {
                     <Box paddingLeft={isCollapsed ? undefined : "10%"}>
                         <Item
                             title="Dashboard"
-                            onClick={() => navigate("/resumemakerui/interview-details")}
+                            to="/resumemakerui"
                             icon={<HomeOutlinedIcon />}
                             selected={selected}
                             setSelected={setSelected}
@@ -135,7 +137,7 @@ const Sidebar = () => {
                         
                         <Item
                             title="Resume"
-                            onClick={() => navigate("/resumemakerui/resume-dashboard")}
+                            to="/resumemakerui/resume"
                             icon={<DashboardIcon />}
                             selected={selected}
                             setSelected={setSelected}
@@ -144,7 +146,7 @@ const Sidebar = () => {
                         
                         <Item
                             title="Search Resource"
-                            onClick={() => navigate("/resumemakerui/filter")}
+                            to="/resumemakerui/filter"
                             icon={<ScreenSearchDesktopIcon />}
                             selected={selected}
                             setSelected={setSelected}
@@ -159,21 +161,21 @@ const Sidebar = () => {
                         </Typography>
                         <Item
                             title="Interview"
-                            onClick={() => navigate("/resumemakerui/interview-details")}
+                            to="/resumemakerui/interview-details"
                             icon={<PeopleOutlinedIcon />}
                             selected={selected}
                             setSelected={setSelected}
                         />
                         <Item
                             title="Feedback"
-                            onClick={() => navigate("/resumemakerui/feedback")}
+                            to="/resumemakerui/feedback"
                             icon={<FeedbackIcon />}
                             selected={selected}
                             setSelected={setSelected}
                         />
                          <Item
                             title="Schedule Interview"
-                            to="/calendar"
+                            to="/resumemakerui/calendar"
                             icon={<CalendarTodayOutlinedIcon />}
                             selected={selected}
                             setSelected={setSelected}
@@ -189,7 +191,7 @@ const Sidebar = () => {
                         </Typography>
                         <Item
                             title="User"
-                            onClick={() => navigate("/resumemakerui/users")}
+                            to="/resumemakerui/user"
                             icon={ <GroupAddRounded />}
                             selected={selected}
                             setSelected={setSelected}
@@ -197,7 +199,7 @@ const Sidebar = () => {
                        
                         <Item
                             title="Tech Stack"
-                            onClick={() => navigate("/resumemakerui/tech-stacks")}
+                            to="/resumemakerui/tech-stacks"
                             icon={<SchoolIcon />}
                             selected={selected}
                             setSelected={setSelected}
@@ -212,14 +214,14 @@ const Sidebar = () => {
                         </Typography>
                         <Item
                             title="Raise Ticket"
-                            to="/bar"
+                            to="/resumemakerui/ticket"
                             icon={<HelpOutlineOutlinedIcon  />}
                             selected={selected}
                             setSelected={setSelected}
                         />
                         <Item
                             title="Review Ticket"
-                            to="/line"
+                            to="/resumemakerui/review-ticket"
                             icon={<TimelineOutlinedIcon />}
                             selected={selected}
                             setSelected={setSelected}
