@@ -74,23 +74,7 @@ function Work({ values, handleChange, handleBlur, touched, errors }) {
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth="sm" sx={{ mt: 4, mb: 4 }}>
-        <Typography variant="h4" component="h1" align="center">
-          Resume Maker
-        </Typography>
-
-        {/* Personal Details */}
-        {/* ... Personal details fields ... */}
-
-        {/* Summary */}
-        {/* ... Summary field ... */}
-
-        {/* Education Details */}
-        {/* ... Education details fields ... */}
-
-        {/* Skills */}
-        {/* ... Skills fields ... */}
-
-        {/* Employment History */}
+       
         <Typography variant="h6" component="h2" sx={{ mt: 4 }}>
           Employment History
         </Typography>
