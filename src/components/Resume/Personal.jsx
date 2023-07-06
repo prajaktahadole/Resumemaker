@@ -1,33 +1,51 @@
-import React, { useState } from 'react';
-import { Box  } from "@mui/material";
+import React from 'react';
+import { TextField, FormControl, InputLabel, Select, MenuItem } from  "@mui/material";
 
-const Personal= ({onDataChange}) => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-
-  const handleNameChange = (event) => {
-    const newName = event.target.value;
-    setName(newName);
-    onDataChange({ name: newName, email }); 
-  };
-
-  const handleEmailChange = (event) => {
-    const newEmail = event.target.value;
-    setEmail(newEmail);
-    onDataChange({ name, email: newEmail });
-  };
-
+const Personal= ({ values, handleChange, handleBlur, touched, errors }) => {
   return (
-    <form>
-    <label>
-      Name:
-      <input type="text" value={name} onChange={handleNameChange} />
-    </label>
-    <label>
-      Email:
-      <input type="email" value={email} onChange={handleEmailChange} />
-    </label>
-  </form>
+    <div>
+      <TextField
+        label="Full Name"
+        name="fullName"
+        value={values.fullName}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        error={touched.fullName && !!errors.fullName}
+        helperText={touched.fullName && errors.fullName}
+      />
+      <FormControl>
+        <InputLabel>Gender</InputLabel>
+        <Select
+          name="gender"
+          value={values.gender}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          error={touched.gender && !!errors.gender}
+        >
+          <MenuItem value="">Select</MenuItem>
+          <MenuItem value="male">Male</MenuItem>
+          <MenuItem value="female">Female</MenuItem>
+          <MenuItem value="other">Other</MenuItem>
+        </Select>
+      </FormControl>
+      <FormControl>
+        <InputLabel>Marital Status</InputLabel>
+        <Select
+          name="maritalStatus"
+          value={values.maritalStatus}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          error={touched.maritalStatus && !!errors.maritalStatus}
+        >
+          <MenuItem value="">Select</MenuItem>
+          <MenuItem value="single">Single</MenuItem>
+          <MenuItem value="married">Married</MenuItem>
+          <MenuItem value="divorced">Divorced</MenuItem>
+          <MenuItem value="widowed">Widowed</MenuItem>
+        </Select>
+      </FormControl>
+      {/* Add more fields for other personal details */}
+    </div>
   );
 };
 

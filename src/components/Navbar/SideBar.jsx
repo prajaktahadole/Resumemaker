@@ -1,24 +1,21 @@
 import { useState } from "react";
 import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
-import { useNavigate} from "react-router-dom";
 import "react-pro-sidebar/dist/css/styles.css";
 import { tokens } from "../../theme";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
-import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import FeedbackIcon from '@mui/icons-material/Feedback';
 import {GroupAddRounded} from "@mui/icons-material";
 import SchoolIcon from '@mui/icons-material/School';
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import ScreenSearchDesktopIcon from '@mui/icons-material/ScreenSearchDesktop';
 import { Link } from "react-router-dom";
-//import InitialsAvatar from 'react-initials-avatar';
+
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
     const theme = useTheme();

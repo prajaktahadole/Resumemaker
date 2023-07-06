@@ -9,6 +9,6 @@ html, body, #root, .app, .content {
 
 .app {
   display: flex;
-  position: relative;
+  position: fixed;
 }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Skills({ values, handleChange, handleBlur, touched, errors }) {
+function Skills() {
   return (
     <div>Skills</div>
   )
