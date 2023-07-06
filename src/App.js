@@ -14,9 +14,7 @@ function App() {
 				<div className="app">
 					<Sidebar />
 					<AppRoutes></AppRoutes>
-					<main className="content">
-						<Topbar />
-					</main>
+					<Topbar />	
 				</div>
 			</ThemeProvider>
 		</ColorModeContext.Provider>

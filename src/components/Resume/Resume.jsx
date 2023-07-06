@@ -41,10 +41,18 @@ function Resume() {
 
 
   return (
-    <Box m="20px">
-    <Box display="flex" justifyContent="space-between" alignItems="center">
+    <Box m="20px"
+      width={"50%"}
+      // border={"1px solid yellow"}
+      position={'relative'}>
+    <Box 
+     display="flex" 
+     justifyContent="space-between" 
+     alignItems="center"
+    >
       <Header title="Create Resume" subtitle="Welcome to your Create Resume" />
     </Box>
+    
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
